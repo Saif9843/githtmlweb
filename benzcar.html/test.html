@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mercedes Slideshow</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .slide {
+    min-width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <div class="slides">
+    <div class="slide" onclick="nextSlide()"><img src="si2.jpg" alt="Mercedes 1"></div>
+    <div class="slide" onclick="nextSlide()"><img src="The new Mercedes-AMG GLE 53 4MATIC+ Coupé.jpg" alt="Mercedes 2"></div>
+    <div class="slide" onclick="nextSlide()"><img src="si3.jpg" alt="Mercedes 3">
+       </div>
+  </div>
+</div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlides() {
+    slides.forEach(slide => slide.style.display = 'none');
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = 'block';
+  }
+
+  function nextSlide() {
+    showSlides();
+  }
+
+  showSlides(); 
+</script>
+
+</body>
+</html>
